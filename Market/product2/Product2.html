@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page - SRC SR-1911 CO2 Airsoft Gun Pistol</title>
+    <link rel="stylesheet" href="../forBuy.css">
+    <meta charset="utf-8">
+    <title>Sign Up | Log In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="forAcc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+
+    <a href="../../Index.html#home" class="logo">
+        <img src="../../Images/Logo.png" alt="Recon Logo">
+        Recon Supply Co.
+    </a>
+
+    <nav class="navbar">
+        <a href="../../index.html#home">Home</a>
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#products">Product</a>
+        <a href="../../index.html#footer">Contact</a>
+        <a href="../../Nav/Team/team.html">Team</a>
+    </nav>
+
+    <div class="icons">
+        <a href="../../Nav/myFav/fav.html" class="fas fa-heart"></a>
+        <a href="../../Nav/Cart/cart.html" class="fas fa-shopping-cart"></a>
+        <a href="../../Nav/for acc/acc.html" class="fas fa-user"></a>
+    </div>
+</header>
+
+<div class="product-container">
+    <div class="image-section">
+        <div class="carousel">
+            <img src="../../Images/airsoft2.jpg" class="carousel-image" alt="Product Image 1" style="display: block;">
+            <img src="../../Images/SR1911_2.png" class="carousel-image" alt="Product Image 2">
+            <img src="../../Images/SR1911_3.png" class="carousel-image" alt="Product Image 3">
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <div class="product-details">
+        <h1>SRC SR-1911 CO2 Airsoft Gun Pistol</h1>
+
+        <p class="description">
+            Reliable CO2-powered Airsoft pistol with full-metal construction, realistic blowback, and precision shooting for competitive and recreational use.
+        </p>
+
+        <p class="price" id="productPrice">$200.00</p>
+
+        <label for="variation">Variation:</label>
+        <select id="variation">
+            <option>Standard Model</option>
+            <option>Extended Magazine</option>
+        </select>
+
+        <div class="buttons">
+            <button class="buy-now" onclick="openModal()">Buy Now!</button>
+            <a href="../../Nav/Cart/cart.html" class="add-to-cart">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<!-- Buy Now Modal -->
+<div id="buyNowModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Order Information</h2>
+        <form id="order-form">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="text" id="mobileNumber" name="mobileNumber" required>
+
+            <label for="unitNumber">Floor/Unit Number:</label>
+            <input type="text" id="unitNumber" name="unitNumber" required>
+
+            <label for="province">Province:</label>
+            <input type="text" id="province" name="province" required>
+
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" required>
+
+            <label for="ward">Ward:</label>
+            <input type="text" id="ward" name="ward" required>
+
+            <div class="payment-methods">
+            <label class="radio-container">
+          <input type="radio" name="paymentMethod" value="cod" required>
+          <img src="../../Images/Cod.png" alt="Cash on Delivery">
+          Cash on Delivery
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="radio-container">
+          <input type="radio" name="paymentMethod" value="gcash" required>
+          <img src="../../Images/Gcash.webp" alt="Gcash">
+          Gcash
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+            <label for="voucher">Voucher:</label>
+            <input type="text" id="voucher" name="voucher">
+
+            <h3>Order Summary</h3>
+            <p id="product-name">Product: SRC SR-1911 CO2 Airsoft Gun Pistol</p>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="updateTotal()">
+
+            <p class="price" id="totalPrice">$200.00</p>
+
+            <button type="submit" class="place-order">Place Order</button>
+        </form>
+    </div>
+</div>
+
+<script src="../thisForBuy.js"></script>
+<script src="../../main.js"></script>
+</body>
+</html>

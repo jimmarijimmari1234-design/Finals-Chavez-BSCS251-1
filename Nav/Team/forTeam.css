@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin-top: 10%;
+}
+
+.wrapper h1 {
+  font-family: 'Allura', cursive;
+  font-size: 52px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.team .team_member {
+  background: #ffe4e1; /* Light pink for cards */
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: #8e8b8b;
+  position: relative;
+  border: 2px solid #d1478a; /* Border to enhance the pink look */
+  border-radius: 10px;
+}
+
+.team .team_member h3 {
+  color: #ff1493; /* Bright pink for names */
+  font-size: 26px;
+  margin-top: 50px;
+}
+
+.team .team_member p.role {
+  color: #d88cbf; /* Softer pink for roles */
+  margin: 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.team .team_member .team_img {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ffe4e1; /* Light pink behind images */
+  border: 3px solid #ff69b4; /* Pink border */
+  overflow: hidden; /* Ensures the image doesn't overflow the circle */
+}
+
+.team .team_member .team_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the circular area */
+  border-radius: 50%;
+}
+
+:root {
+  --pink: #e84393;
+  --blue: #1204d5;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow: auto;
+}
+
+/* BODY */
+body {
+  background: #ffb6c1;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  padding-top: 120px; /* makes space below navbar */
+  background: -webkit-linear-gradient(left, #9896F0,#FBC8D5);
+}
+
+.fav-container {
+    text-align: center;
+}
+
+.fav-image {
+    max-width: 80%;
+    height: auto;
+}
+
+.fav-text {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* HEADER / NAVIGATION BAR */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 3rem;
+  color: var(--blue);
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+header .logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transform: scale(1.3);
+  transform-origin: left center;
+  margin-left: -8px;
+}
+
+header .navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+header .navbar a {
+  font-size: 2rem;
+  padding: 0 1.5rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+header .navbar a:hover {
+  color: var(--blue);
+  transform: scale(1.1);
+}
+
+header .icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+header .icons a {
+  font-size: 2.5rem;
+  color: #333;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+header .icons a:hover {
+  color: var(--blue);
+  transform: scale(1.1);
+}
+
+header #toggler {
+  display: none;
+}
+
+header .fa-bars {
+  font-size: 3rem;
+  color: #ccc;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  border: .1rem solid rgba(0, 0, 0, .3);
+  display: none;
+}
+
+/* Responsive Menu */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header .fa-bars {
+    display: block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #eee;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header #toggler:checked ~ .navbar {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  header .logo {
+    font-size: 2.5rem;
+  }
+}
+
+/* 📱 Responsive Navigation Bar Styles */
+
+/* ✅ For tablets & smaller laptops (≤1200px) */
+@media (max-width: 1200px) {
+  header {
+    padding: 1.5rem 5%;
+  }
+
+  /* 🔹 Show hamburger icon */
+  header .fa-bars {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* 🔹 Hide navbar initially (collapsed) */
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    z-index: 999;
+  }
+
+  /* 🔹 Show navbar when toggler is checked */
+  #toggler:checked ~ .navbar {
+    max-height: 400px;
+    opacity: 1;
+    padding: 1rem 2rem;
+  }
+
+  /* 🔹 Adjust link appearance */
+  header .navbar a {
+    font-size: 2rem;
+    width: 100%;
+    padding: 1rem 0 1rem 5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background: #fff;
+    transition: background 0.3s;
+  }
+
+  header .navbar a:hover {
+    background: rgba(0, 0, 255, 0.05);
+    color: var(--blue);
+  }
+}
+
+/* ✅ For tablets (≤991px) */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 2rem;
+  }
+}
+
+/* ✅ For mobile devices (≤768px) */
+@media (max-width: 768px) {
+  /* 🔹 Show hamburger menu */
+  header .fa-bars {
+    display: block;
+  }
+
+  /* 🔹 Mobile dropdown style */
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #eee;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  /* 🔹 When toggler is checked, show navbar */
+  header #toggler:checked ~ .navbar {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  /* 🔹 Navbar links for mobile */
+  header .navbar a {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    display: block;
+    text-align: left;
+  }
+}
+
+/* ✅ For small phones (≤450px) */
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  header .logo {
+    font-size: 2.5rem;
+  }
+}
