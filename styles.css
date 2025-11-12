@@ -1,0 +1,1100 @@
+:root {
+  --pink: #e84393;
+  --blue: #1204d5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow: auto;
+}
+
+/* ✅ Prevent overlap, but smaller padding */
+body {
+  margin: 0;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  color: #333;
+  padding: 1rem;
+  margin: 2rem 0;
+  background: rgba(255, 51, 153, .05);
+}
+
+.heading span {
+  color: var(--blue);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: #333;
+  color: #fff;
+  padding: .9rem 3.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+/* HEADER / NAVBAR */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between image and text */
+  font-size: 3rem;
+  color: var(--blue);
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+header .logo img {
+  height: 40px; /* keeps header height same */
+  width: auto;
+  object-fit: contain;
+  transform: scale(1.3); /* makes it look bigger without resizing header */
+  transform-origin: left center;
+  margin-left: -8px; /* move slightly left if needed */
+}
+
+header .logo span {
+  color: var(--blue);
+}
+
+header .navbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  flex-wrap: wrap; /* ✅ allow wrapping automatically when space runs out */
+}
+
+header .navbar a {
+  font-size: 2rem;
+  padding: 0 1.5rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+header .navbar a:hover {
+  color: var(--blue);
+  transform: scale(1.1);
+}
+
+header .icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0; /* ✅ ensures icons never wrap */
+  white-space: nowrap;
+}
+
+header .icons a {
+  font-size: 2.5rem;
+  color: #333;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+header .icons a:hover {
+  color: var(--blue);
+  transform: scale(1.1);
+}
+
+header #toggler {
+  display: none;
+}
+
+header .fa-bars {
+  font-size: 3rem;
+  color: #ccc;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  border: .1rem solid rgba(0, 0, 0, .3);
+  display: none;
+}
+
+.home .content p {
+  font-size: 1rem;
+  color: #FDF7E4;
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+/* home SECTION — ⬇ Adjusted for no gap after navbar */
+.home {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: #ffe6ef url(images/Background.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* LEFT SIDE */
+.home .content {
+  flex: 1 1 45rem;
+}
+
+.home .content h1 {
+  font-size: 3.8rem;
+  color: #333;
+  margin-bottom: 1rem; /* keeps the space below */
+  margin-top: 8rem;
+}
+
+.home .content h1 span {
+  color: var(--blue);
+}
+
+.home .content p {
+  font-size: 1.8rem;
+  color: #555;
+  margin: 3rem 0 5rem; /* ✅ slightly more space on top */
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* ICONS ROW */
+.home .icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.home .icons i {
+  font-size: 3rem;
+  color: #333;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.home .icons i:hover {
+  color: var(--pink);
+  transform: scale(1.2);
+}
+
+/* RIGHT SIDE */
+.home .image {
+  flex: 1 1 40rem;
+  text-align: center;
+}
+
+.home .image img {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 1rem;
+}
+
+
+
+/* SUBTEXT SECTION */
+.home .subtext-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.home .subtext-box {
+  flex: 1 1 30%;
+  background: rgba(255, 51, 153, 0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* 👇 make content align nicely */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home .subtext-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 .8rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+.home .subtext-box i {
+  font-size: 3rem;
+  color: var(--blue);
+  margin-top: auto; /* ✅ pushes the icon to the bottom */
+}
+
+.home .subtext-box h3 {
+  font-size: 1.8rem;
+  color: var(--pink);
+  margin-bottom: 0.8rem;
+}
+
+.home .subtext-box p {
+  font-size: 1.4rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===== BODY 2 — INFO + SIDEBAR ===== */
+.info {
+  padding: 15rem 9% 6rem 9%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(252, 252, 252, 1),
+    rgba(240, 240, 240, 0.95)
+  );
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* ROW LAYOUT */
+.info .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* LEFT — CONTENT */
+.info .content {
+  flex: 2 1 60rem;
+}
+
+.info .content h2 {
+  font-size: 5rem;
+  color: #222;
+  margin-bottom: 10rem;
+}
+
+.info .content h2 span {
+  color: var(--blue);
+}
+
+.info .content p {
+  font-size: 1.8rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  text-align: justify;
+}
+
+/* RIGHT — SIDEBAR */
+.info .sidebar {
+  flex: 1 1 35rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-left: 0.4rem solid var(--blue);
+  border-radius: 1rem;
+  padding: 3rem;
+  box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+  backdrop-filter: blur(8px);
+  margin-top: 3rem;
+}
+
+.info .sidebar h3 {
+  font-size: 2.2rem;
+  color: var(--blue);
+  margin-bottom: 1.5rem;
+  border-bottom: 0.2rem solid rgba(0, 0, 0, 0.05);
+  padding-bottom: .8rem;
+}
+
+.info .sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.info .sidebar ul li {
+  font-size: 1.6rem;
+  color: #333;
+  padding: .4rem 0;
+  line-height: 1.6;
+}
+
+.info .sidebar p {
+  font-size: 1.5rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* BODY 3 — home IMAGE + INFO STATEMENT */
+.showcase {
+  padding: 5rem 9% 8rem; /* ⬅ less top padding */
+  background: linear-gradient(
+    to bottom right,
+    rgba(18, 4, 213, 0.05),
+    rgba(255, 230, 239, 0.3)
+  );
+  display: flex;
+  align-items: flex-start; /* ⬅ pushes content up */
+  justify-content: center;
+}
+
+.showcase .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8rem;
+}
+
+/* LEFT IMAGE */
+.showcase-image {
+  flex: 1 1 45%;
+}
+
+.showcase-image img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 .8rem 2rem rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  margin-left: -4rem; /* ⬅ shifts image slightly left */
+  margin-top: 12rem;
+}
+
+/* RIGHT INFO CONTENT */
+.showcase-content {
+  flex: 1 1 45%;
+}
+
+.showcase-content h2 {
+  font-size: 5rem;
+  margin-bottom: 6rem;
+  color: #111;
+}
+
+.showcase-content h2 span {
+  color: var(--blue);
+}
+
+.showcase-content p {
+  font-size: 1.8rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.showcase-content .btn {
+  display: inline-block;
+  background: var(--blue);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: .8rem;
+  font-size: 1.6rem;
+  transition: background 0.3s ease;
+  margin-top: 3rem;
+}
+
+.showcase-content .btn:hover {
+  background: var(--pink);
+}
+
+/* PRODUCTS */
+/* PRODUCTS */
+.products {
+  padding: 4rem 9%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(252, 252, 252, 1),
+    rgba(240, 240, 240, 0.95)
+  );
+  text-align: center;
+}
+
+.products .heading {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Container */
+.products .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch; /* ✅ keeps boxes equal height */
+}
+
+/* Product Box */
+.products .box {
+  flex: 1 1 25rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 .8rem 2rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column; /* ✅ for equal internal structure */
+}
+
+.products .box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image */
+.products .box .image {
+  text-align: center;
+  padding: 2rem;
+  flex-shrink: 0;
+}
+
+.products .box .image img {
+  height: 20rem;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.products .box:hover .image img {
+  transform: scale(1.05);
+}
+
+/* Content */
+.products .box .content {
+  flex: 1; /* ✅ fill remaining height equally */
+  padding: 1.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ✅ space between text and buttons */
+}
+
+.products .box .content h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  min-height: 5rem; /* ✅ keeps title area consistent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.products .box .content .price {
+  font-size: 1.6rem;
+  color: var(--pink);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.products .box .content .price span {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
+}
+
+/* Buttons */
+.products .box .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: auto; /* ✅ keeps buttons at bottom */
+}
+
+.products .box .buttons a {
+  flex: 1;
+  text-align: center;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 .3rem .7rem rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.products .box .buttons .buy-now {
+  background: var(--blue);
+  color: #fff;
+}
+
+.products .box .buttons .add-cart {
+  background: #fff;
+  color: var(--blue);
+  border: 2px solid var(--blue);
+}
+
+.products .box .buttons .favorites {
+  background: var(--pink);
+  color: #fff;
+}
+
+.products .box .buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.footer {
+  background: #f8f8f8; /* soft neutral background */
+  padding: 6rem 9% 4rem; /* more bottom padding */
+}
+
+.footer .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem; /* more spacing between boxes */
+  justify-content: space-between;
+}
+
+.footer .box-container .box {
+  flex: 1 1 25rem;
+  min-width: 22rem;
+}
+
+.footer .box-container .box h3 {
+  color: #222;
+  font-size: 2.3rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.footer .box-container .box a {
+  display: block;
+  color: #555;
+  font-size: 1.6rem;
+  padding: 0.7rem 0;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer .box-container .box a:hover {
+  color: #1a73e8; /* light blue hover */
+  transform: translateX(4px);
+}
+
+.footer .box-container .box img {
+  margin-top: 1.5rem;
+  width: 180px;
+  opacity: 0.9;
+}
+
+.footer .credit {
+  text-align: center;
+  padding: 2.5rem 0 1rem;
+  margin-top: 3rem;
+  font-size: 1.7rem;
+  color: #444;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer .credit span {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+
+
+
+
+/* For screens up to 768px — Mobile phones */
+@media (max-width: 768px) {
+  /* 🔹 Show hamburger menu */
+  header .fa-bars {
+    display: block;
+  }
+
+  /* 🔹 Make navbar slide down */
+  header .navbar{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #eee;
+		border-top: .1rem solid rgba(0, 0, 0, .1);
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+
+	header #toggler:checked ~ .navbar{
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	}
+
+	header .navbar a{
+		margin: 1.5rem;
+		padding: 1.5rem;
+		background: #fff;
+		border: .1rem solid rgba(0, 0, 0, .1);
+		display: block;
+	}
+
+  /* 🔹 Stack home content */
+  .home .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .content {
+    flex: 1 1 100%;
+    margin-bottom: 2rem;
+  }
+
+  .home .content h1 {
+    font-size: 3rem;
+    margin-top: 4rem;
+  }
+
+  .home .content p {
+    margin: 2rem 0 3rem;
+  }
+
+  .home .image {
+    flex: 1 1 100%;
+    padding-top: 3rem;
+  }
+
+  .home .image img {
+    max-width: 90%;
+  }
+}
+
+/* For screens up to 450px — Small mobile phones */
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  header .logo {
+    font-size: 2.5rem;
+  }
+
+  .home .content h1 {
+    font-size: 2.8rem;
+  }
+
+  .home .content p {
+    font-size: 1.3rem;
+  }
+
+  .home .icons i {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home .subtext-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home .subtext-box {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .info .row {
+    flex-direction: column;
+  }
+
+  .info .sidebar {
+    border-left: none;
+    border-top: 0.4rem solid var(--pink);
+  }
+
+  .info .content h2 {
+    text-align: center;
+  }
+
+  .info .content p {
+    text-align: center;
+  }
+}
+
+/*For Reflexiveness*/
+
+/* 📱 RESPONSIVE DESIGN — For Your Blue & Pink Theme */
+
+/* For screens up to 991px — Tablets */
+/* 🌍 RESPONSIVE FIXES */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    padding: calc(var(--navbar-height, 7rem) + 2rem) 5%;
+    text-align: center;
+  }
+
+  .home .content h1 {
+    font-size: 3.2rem;
+  }
+
+  .home .content p {
+    font-size: 1.6rem;
+  }
+
+  .home .image img {
+    max-width: 80%;
+  }
+
+  .home .subtext-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home .subtext-box {
+    flex: 1 1 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .home .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .home {
+    padding-top: calc(var(--navbar-height, 6.5rem) + 1rem);
+  }
+
+  .home .content h1 {
+    font-size: 2.8rem;
+  }
+
+  .home .content p {
+    font-size: 1.6rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .products .box-container .box .image .icons {
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .home .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .icons {
+    justify-content: center;
+  }
+}
+
+/* ✅ Tablets & Surface Pro 7 (width ≤ 1024px) */
+@media (max-width: 1024px) {
+  .home .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .content {
+    flex: 1 1 100%;
+    order: 1; /* text first */
+  }
+
+  .home .icons {
+    justify-content: center;
+  }
+
+  .home .image {
+    flex: 1 1 100%;
+    order: 2; /* image after text */
+    margin-top: 2rem;
+  }
+
+  .home .image img {
+    max-width: 500px;
+  }
+}
+
+/* ✅ Mobile (width ≤ 600px) */
+@media (max-width: 600px) {
+  .home {
+    padding-top: 100px; /* more breathing room */
+  }
+
+  .home .content h1 {
+    font-size: 2.8rem;
+  }
+
+  .home .content p {
+    font-size: 1.6rem;
+  }
+
+  .home .image img {
+    max-width: 350px;
+  }
+}
+
+/* ✅ Large tablets / Surface Pro 7 (width ≤ 1024px) */
+@media (max-width: 1024px) {
+  .info {
+    padding: 12rem 6% 5rem 6%;
+  }
+
+  .info .row {
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info .content {
+    flex: 1 1 100%;
+    max-width: 800px;
+  }
+
+  .info .content h2 {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .info .sidebar {
+    flex: 1 1 100%;
+    max-width: 600px;
+    border-left: none;
+    border-top: 0.4rem solid var(--blue);
+    text-align: left;
+    margin: 0 auto;
+  }
+}
+
+/* ✅ Tablets (width ≤ 768px) */
+@media (max-width: 768px) {
+  .info {
+    padding: 10rem 6% 5rem 6%;
+  }
+
+  .info .content h2 {
+    font-size: 3.4rem;
+  }
+
+  .info .content p {
+    font-size: 1.7rem;
+  }
+
+  .info .sidebar h3 {
+    font-size: 2rem;
+  }
+
+  .info .sidebar ul li {
+    font-size: 1.5rem;
+  }
+}
+
+/* ✅ Mobile (width ≤ 600px) */
+@media (max-width: 600px) {
+  .info {
+    padding: 8rem 5% 4rem 5%;
+  }
+
+  .info .content h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .info .content p {
+    font-size: 1.6rem;
+  }
+
+  .info .sidebar {
+    padding: 2rem;
+    border-top: 0.3rem solid var(--blue);
+  }
+
+  .info .sidebar h3 {
+    font-size: 1.8rem;
+  }
+
+  .info .sidebar ul li {
+    font-size: 1.4rem;
+  }
+}
+
+/* ✅ Responsive Dropdown — activates EARLY so it triggers before overflow */
+@media (max-width: 1200px) {
+  header {
+    padding: 1.5rem 5%;
+  }
+
+  header .fa-bars {
+    display: block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    z-index: 999;
+  }
+
+  /* When toggler checked — show dropdown */
+  #toggler:checked ~ .navbar {
+    max-height: 400px;
+    opacity: 1;
+    padding: 1rem 2rem;
+  }
+
+  header .navbar a {
+    font-size: 2rem;
+    padding: 1rem 0;
+    width: 100%;
+    padding: 1rem 0 1rem 5rem; /* ⬅ Added left padding for slight indent */
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+}
+
+/* For medium screens (Surface Pro 7 / tablets / zoomed-in laptops) */
+@media (max-width: 1250px) {
+  .showcase-content h2 {
+    font-size: 3.8rem;
+    text-align: center;
+  }
+
+  .showcase-content p {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  .showcase-content {
+    text-align: center;
+  }
+
+  .showcase-image img {
+    margin-top: 5rem;
+  }
+}
+
+/* For smaller tablets and mobile */
+@media (max-width: 900px) {
+  .showcase .row {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .showcase-image img {
+    margin: 3rem auto 0;
+    width: 90%;
+    max-width: 500px;
+    display: block;
+  }
+
+  .showcase-content {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .showcase-content h2 {
+    font-size: 3.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .showcase-content p {
+    font-size: 1.6rem;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 600px) {
+  .showcase {
+    padding: 3rem 5%;
+  }
+
+  .showcase-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .showcase-content p {
+    font-size: 1.5rem;
+  }
+
+  .showcase-image img {
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
+
+/* 📱 Responsive Fixes */
+@media (max-width: 900px) {
+  .products .box {
+    flex: 1 1 100%;
+  }
+
+  .products .box .content h3 {
+    font-size: 1.8rem;
+  }
+}
